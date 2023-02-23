@@ -1,13 +1,20 @@
 /*
 Task: Convert Strings to Numbers / String number ku badal
 
+
 Do the following:   
+
    1. Declare a string type variable with the value of "1999" 
+
    2. Convert the string value of "1999" to a integer value of 1999
    3. Return the result
 
    HINT: look up the Number method / Raadi Number Method wax la dhaho
 */
+
+const Numbers = '1999';
+const Converted = parseInt(Numbers); // this functio converts string numbers to integer number
+console.log(typeof Converted) // you will get a number 
 
 
 /*
@@ -19,6 +26,15 @@ Do the following:
    3. Else just print 'So moody!' / Hadii kale 'So Moody!' soo saar.
 
 */
+const AskingTheUsers = prompt("Mood Checket Please Enter you Fealings");
+// cheking the Mood of the user
+if (AskingTheUsers === 'happy') {
+   console.log('Yay me too!')
+} else if (AskingTheUsers === 'sad') {
+   console.log('Aw cheer up')
+} else {
+   console.log('So moody!')
+}
 
 
 /*
@@ -30,10 +46,23 @@ Adigoo 'if/else' isticmaalaayo hubi in nambar uu yahay 'kisi ama dhaban', kadi c
 
 */
 
-var num = 16; // You can change this number! / Number-kaan ku bilow
+// You can change this number! / Number-kaan ku bilow
+// const number = 6;
+// 2 
 
 // write your conditions here / Code-kaada halkaan ku qor
 
+var num = 16;
+const number = prompt("Enter a number: "); // i use promt to get dynamic number from the user
+
+//check if the number is even
+if (num % 2 == 0) { // this operator is called modulas operator
+   console.log("The number is even.");
+}
+// if the number is odd
+else {
+   console.log("The number is odd.");
+}
 
 
 
@@ -48,6 +77,8 @@ You're about to do an assignment called "Fizz Buzz", which is one of the classic
 
 
 Write a program that prints the numbers from 1 to 100.
+
+
 
 Code qor soo saaraayo inta u dhaxeysa 1 ilaa 100.
 
@@ -92,6 +123,29 @@ It's okay for it to be slow.
 
 
 */
+// Write a program that prints the numbers from 1 to 100
+// for (let numbers = 0; numbers <= 100; numbers++) {
+//    console.log(numbers)
+// }
+
+// FIZZBUZZ assignment
+function fizzBuzz(start, end) {
+   for (let num = start; num <= end; num++) {
+      if (num % 5 === 0 && num % 3 === 0) {
+         console.log("FizzBuzz")
+      }
+      else if (num % 3 === 0) {
+         console.log("Fizz")
+      }
+      else if (num % 5 === 0) {
+         console.log("Buzz")
+      }
+      else {
+         console.log(num)
+      }
+   }
+}
+fizzBuzz(100, 200)
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -106,7 +160,24 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
+const GEtingUserVowels = prompt('enter string');
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+// program to count the number of vowels in a string
+
+// defining vowels
+const vowels = ["a", "e", "i", "o", "u"]
+function vowelCounter(string) {
+   let count = 0;
+
+   // loop through string to test if each character is a vowel
+   for (let letter of string.toLowerCase()) {
+      if (vowels.includes(letter)) {
+         count++;
+      }
+   }
+
+   // return number of vowels
+   console.log(count)
+   return count
 }
+vowelCounter(GEtingUserVowels)
